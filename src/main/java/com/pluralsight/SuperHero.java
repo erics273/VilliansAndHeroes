@@ -8,6 +8,7 @@ public class SuperHero extends SuperPerson{
 
     //constructor that calls the parent class constructor
     public SuperHero(String name, int health, int powerLevel) {
+        //run the constructor in the parent
         super(name, health);
 
         //in the parent we default power level (XP) to 0
@@ -26,7 +27,7 @@ public class SuperHero extends SuperPerson{
         //if the base damage (without the xp) was 0, don't do any damage and just say you missed
         //otherwise deal the damage and say something about you kicking butt agains your opponent
 
-        //generate some random damage numnber
+        //generate some random damage number
         int baseDamage = new Random().nextInt(16);
         //supplement the damage number with the experience points for this superHero
         int damage = baseDamage + this.experiencePoints;

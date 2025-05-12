@@ -4,30 +4,30 @@ public class SuperApp {
 
     public static void main(String[] args) {
 
-        //create 2 SuperPeople
-        SuperPerson superAbraham = new SuperPerson("Abraham", 100);
-        SuperHero superAssia = new SuperHero("Assia", 100, 25);
+        // Create a hero object with a name, health, and power level
+        // Create a villain object with a name, health, and evilness
 
-        //ask eachSuperPerson how they are doing
-        System.out.println((superAbraham.getStatus()));
-        System.out.println((superAssia.getStatus()));
+        // Display an introduction message
+        // Show the starting status of both characters
 
+        // Loop while both the hero and villain are still alive
+            // Indicate the hero's turn
+            // Have the hero fight the villain
+            // Show the villain's updated status
 
-        //take damage
-        superAbraham.takeDamage(15);
-        superAssia.takeDamage(20);
+            // If the villain is no longer alive, break the loop
 
-        //ask eachSuperPerson how they are doing
-        System.out.println(superAbraham.getStatus());
-        System.out.println(superAssia.getStatus());
+            // Indicate the villain's turn
+            // Have the villain fight the hero
+            // Show the hero's updated status
+        // End of loop
 
-        //make the superfolks fight each other
-        superAbraham.fight(superAssia);
-        superAssia.fight(superAbraham);
+        // Display a message that the battle is over
 
-        //ask eachSuperPerson how they are doing
-        System.out.println(superAbraham.getStatus());
-        System.out.println(superAssia.getStatus());
+        // If the hero is still alive
+            // Announce the hero as the winner
+        // Otherwise
+            // Announce the villain as the winner
 
     }
 

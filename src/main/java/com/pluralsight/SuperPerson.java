@@ -41,6 +41,8 @@ public class SuperPerson {
         //subtract the damage amount from the health
         //but we don't want ever set our health below 0
         this.health -= damageAmount;
+
+        //health not allowed to go below zero
         if(this.health < 0){
             this.health = 0;
         }
