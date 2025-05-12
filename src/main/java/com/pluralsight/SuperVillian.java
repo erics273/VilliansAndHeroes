@@ -3,7 +3,7 @@ package com.pluralsight;
 import java.util.Random;
 
 class SuperVillain extends SuperPerson {
-    
+
     public SuperVillain(String name, int health, int evilness) {
         super(name, health);
         this.experiencePoints = evilness;
@@ -23,4 +23,5 @@ class SuperVillain extends SuperPerson {
             opponent.takeDamage(damage);
         }
     }
+    
 }

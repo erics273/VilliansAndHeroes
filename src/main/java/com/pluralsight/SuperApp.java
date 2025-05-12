@@ -4,7 +4,7 @@ public class SuperApp {
 
     public static void main(String[] args) {
 
-        // Create a hero object with a name, health, and power level
+        // Create a hero object with a name, health, and powerLevel
         // Create a villain object with a name, health, and evilness
 
         // Display an introduction message
