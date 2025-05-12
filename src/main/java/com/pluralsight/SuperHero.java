@@ -25,6 +25,20 @@ public class SuperHero extends SuperPerson{
         //the damage should be a random numnber plus the experiencesPoints(powerLevel)
         //if the base damage (without the xp) was 0, don't do any damage and just say you missed
         //otherwise deal the damage and say something about you kicking butt agains your opponent
+
+        //generate some random damage numnber
+        int baseDamage = new Random().nextInt(16);
+        //supplement the damage number with the experience points for this superHero
+        int damage = baseDamage + this.experiencePoints;
+
+        //if we didnt do any base damage, we suck and missed
+        if (baseDamage == 0) {
+            System.out.println(this.name + " swings heroically... but misses!");
+        } else {
+            //we made contact, deal the damage to the opponent
+            System.out.println(this.name + " lands a heroic punch on " + opponent.name + " for " + damage + " damage!");
+            opponent.takeDamage(damage);
+        }
     }
 
 
