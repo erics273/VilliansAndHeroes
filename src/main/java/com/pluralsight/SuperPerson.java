@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
 
-public class SuperPerson {
+//abstract class that prevents instantiation and acts as a blueprint for child classes
+public abstract class SuperPerson {
 
     //protected properties so they can possibly be access by our children, grand children, etc...
     //these properties stay in the family
@@ -35,13 +36,10 @@ public class SuperPerson {
     }
 
     //method that allows us to fight another SuperPerson
-    public void fight(SuperPerson opponent){
-        //generate a random amount of damage
-        //this line returns a number between 0 and 20
-        int damageAmount = new Random().nextInt(21);
-        //print out who we are fighting.
-        System.out.println(this.name + "  is fighting " + opponent.name);
-        opponent.takeDamage(damageAmount + this.experiencePoints);
+    public abstract void fight(SuperPerson opponent);
+
+    public String getType(){
+        return this.getClass().getSimpleName();
     }
 
     //this methods allows a super person to take damage

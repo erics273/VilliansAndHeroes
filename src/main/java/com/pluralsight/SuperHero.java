@@ -50,5 +50,4 @@ public class SuperHero extends SuperPerson{
 
     }
 
-
 }

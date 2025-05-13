@@ -6,8 +6,12 @@ public class SuperApp {
 
         //create our hero
         SuperHero hero = new SuperHero("CodeMaster", 100, 10);
+        //what type of thing is hero
+        System.out.println(hero.name +" is a " + hero.getType());
+
         //create our villian
         SuperVillain villain = new SuperVillain("Nullinator", 100, 7);
+        System.out.println(villain.name + " is a " + villain.getType());
 
         //add some power ups to hero and villian
         hero.addPowerUp("Bat", 10);
