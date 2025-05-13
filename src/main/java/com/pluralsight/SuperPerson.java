@@ -78,23 +78,29 @@ public class SuperPerson {
         }
     }
 
+    //add items to my inventory
     public void addPowerUp(String name, int value){
         inventory.put(name, value);
     }
 
     public int getPowerUpBonus(String name){
 
+        //bonus damage has to start at something
         int bonusDamage = 0;
 
+        //return the 0 bonus damage if we don't have that item
         if(!inventory.containsKey(name)){
             System.out.println(name + " does not exist in your inventory, 0 bonus damage");
-            return 0;
+            return bonusDamage;
         }
 
+        //get the items damage
         bonusDamage = inventory.get(name);
 
+        //print out what item we got
         System.out.println("The " + name + " has been equipped and will do " + bonusDamage + " extra damage");
 
+        //return the damage modifier
         return bonusDamage;
 
     }
@@ -106,7 +112,7 @@ public class SuperPerson {
             //create a new list of just the keys from the HashMap (glove, hammer, etc....)
             ArrayList<String> items = new ArrayList<String>(inventory.keySet());
 
-            //get a random item name from the above list we just made and store it in randomeItem
+            //get a random item name from the above list we just made and store it in randomItem
             String randomItem = items.get(new Random().nextInt(items.size()));
 
             //get the point value for that item from the inventory HashMap

@@ -15,6 +15,7 @@ class SuperVillain extends SuperPerson {
         Random rand = new Random();
         int base = rand.nextInt(11);
 
+        //get the bonus damage for an item that may be in the inventory
         int bonusDamage = this.getPowerUpBonus("Crowbar");
 
         int damage = base + experiencePoints + bonusDamage;
