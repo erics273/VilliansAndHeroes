@@ -1,5 +1,7 @@
 package com.pluralsight;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Random;
 
 public class SuperPerson {
@@ -9,6 +11,12 @@ public class SuperPerson {
     protected String name;
     protected int health;
     protected int experiencePoints;
+
+    //create hashmap for battle log
+    private HashMap<String, Integer> battleLog = new HashMap<String, Integer>();
+    //create HashMap for inventory
+    private HashMap<String, Integer> inventory = new HashMap<String, Integer>();
+
 
     public SuperPerson(String name, int health) {
         //take in the values for name and health
@@ -56,4 +64,61 @@ public class SuperPerson {
 
     }
 
+    //update the log entry for our SuperPerson
+    public void logHit(SuperPerson opponent) {
+        String name = opponent.name;
+        int count = battleLog.getOrDefault(name, 0);
+        battleLog.put(name, count + 1);
+    }
+
+    public void printBattleLog() {
+        System.out.println("Battle log for " + name + ":");
+        for (HashMap.Entry<String, Integer> entry : battleLog.entrySet()) {
+            System.out.println(" - Hit " + entry.getKey() + ": " + entry.getValue() + " times");
+        }
+    }
+
+    public void addPowerUp(String name, int value){
+        inventory.put(name, value);
+    }
+
+    public int getPowerUpBonus(String name){
+
+        int bonusDamage = 0;
+
+        if(!inventory.containsKey(name)){
+            System.out.println(name + " does not exist in your inventory, 0 bonus damage");
+            return 0;
+        }
+
+        bonusDamage = inventory.get(name);
+
+        System.out.println("The " + name + " has been equipped and will do " + bonusDamage + " extra damage");
+
+        return bonusDamage;
+
+    }
+
+    public int getPowerUpBonusRandom(){
+        int bonusDamage = 0;
+
+        if (!inventory.isEmpty()) {
+            //create a new list of just the keys from the HashMap (glove, hammer, etc....)
+            ArrayList<String> items = new ArrayList<String>(inventory.keySet());
+
+            //get a random item name from the above list we just made and store it in randomeItem
+            String randomItem = items.get(new Random().nextInt(items.size()));
+
+            //get the point value for that item from the inventory HashMap
+            //bonuse would be the int that represents the damage the item will do.
+            bonusDamage = inventory.get(randomItem);
+
+            System.out.println("The " + randomItem + " has been equipped and will do " + bonusDamage + " extra damage");
+
+        }else{
+            System.out.println("no items exist in your inventory, 0 bonus damage");
+        }
+
+        return bonusDamage;
+    }
 }

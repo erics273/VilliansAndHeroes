@@ -29,8 +29,12 @@ public class SuperHero extends SuperPerson{
 
         //generate some random damage number
         int baseDamage = new Random().nextInt(16);
+
+        //generate bonus damage from random weapon in inventory
+        int bonusDamage = this.getPowerUpBonusRandom();
+
         //supplement the damage number with the experience points for this superHero
-        int damage = baseDamage + this.experiencePoints;
+        int damage = baseDamage + this.experiencePoints + bonusDamage;
 
         //if we didnt do any base damage, we suck and missed
         if (baseDamage == 0) {
@@ -39,7 +43,11 @@ public class SuperHero extends SuperPerson{
             //we made contact, deal the damage to the opponent
             System.out.println(this.name + " lands a heroic punch on " + opponent.name + " for " + damage + " damage!");
             opponent.takeDamage(damage);
+            //add the hit to the log
+            logHit(opponent);
         }
+
+
     }
 
 

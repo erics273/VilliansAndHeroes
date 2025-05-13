@@ -14,14 +14,20 @@ class SuperVillain extends SuperPerson {
     public void fight(SuperPerson opponent) {
         Random rand = new Random();
         int base = rand.nextInt(11);
-        int damage = base + experiencePoints;
+
+        int bonusDamage = this.getPowerUpBonus("Crowbar");
+
+        int damage = base + experiencePoints + bonusDamage;
 
         if (base == 0) {
             System.out.println(name + " fires a sneaky blast... but misses!");
         } else {
             System.out.println(name + " hits " + opponent.name + " with a sneaky blast for " + damage + " damage!");
             opponent.takeDamage(damage);
+            logHit(opponent);
         }
+
+
     }
-    
+
 }
