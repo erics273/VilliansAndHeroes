@@ -2,7 +2,7 @@ package com.pluralsight;
 
 import java.util.Random;
 
-class SuperVillain extends SuperPerson {
+class SuperVillain extends SuperPerson implements Fighter {
 
     public SuperVillain(String name, int health, int evilness) {
         super(name, health);

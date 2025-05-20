@@ -4,7 +4,7 @@ import java.util.Random;
 
 //create a class using the extends keyword to bascially copy all the functionality from
 //the parent class to the child class
-public class SuperHero extends SuperPerson{
+public class SuperHero extends SuperPerson implements Fighter{
 
     //constructor that calls the parent class constructor
     public SuperHero(String name, int health, int powerLevel) {

@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Random;
 
 //abstract class that prevents instantiation and acts as a blueprint for child classes
-public abstract class SuperPerson {
+public abstract class SuperPerson implements Fighter {
 
     //protected properties so they can possibly be access by our children, grand children, etc...
     //these properties stay in the family
