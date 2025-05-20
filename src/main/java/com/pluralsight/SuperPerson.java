@@ -35,9 +35,6 @@ public abstract class SuperPerson {
 
     }
 
-    //method that allows us to fight another SuperPerson
-    public abstract void fight(SuperPerson opponent);
-
     public String getType(){
         return this.getClass().getSimpleName();
     }
