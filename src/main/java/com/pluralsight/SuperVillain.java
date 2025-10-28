@@ -2,9 +2,9 @@ package com.pluralsight;
 
 import java.util.Random;
 
-public class SuperVillian extends SuperPerson {
+public class SuperVillain extends SuperPerson {
 
-    public SuperVillian(String name, int health, int evilness) {
+    public SuperVillain(String name, int health, int evilness) {
 
         //call the parent constructor with the super() method
         super(name, health);
@@ -20,7 +20,7 @@ public class SuperVillian extends SuperPerson {
         //generate a random number of damage to do
         Random rand = new Random();
         //return a whole number between 0 and 101 inculusive of the 0 but not the 101 (0-100)
-        int baseDamage = rand.nextInt(101);
+        int baseDamage = rand.nextInt(101); //really means 0-100
 
         //lets make the total damage interesting by taking into account our experiencePoints
         int totalDamage = baseDamage + this.experiencePoints;
